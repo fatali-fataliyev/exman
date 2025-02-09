@@ -12,7 +12,6 @@ type Group struct {
 }
 
 func CreateGroup(groupName string) (Group, error) {
-	//creates group name.
 	//add user functionality.
 	//add current time to group.
 
@@ -31,5 +30,9 @@ func CreateGroup(groupName string) (Group, error) {
 		members:      0,
 		creationDate: createdDate,
 	}, nil
+
+}
+
+func addMember(ID int, name string, paidCategory string, amount float64) {
 
 }
