@@ -35,6 +35,6 @@ func CreateGroup(groupName string) (Group, error) {
 
 }
 
-func addMember(ID int, name string, paidCategory string, amount float64) {
-
+func addMember() {
+	//test
 }
