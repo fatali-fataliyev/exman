@@ -19,11 +19,12 @@ func main() {
 		fmt.Println("failed to give name to group: ", err)
 		return
 	}
+
+	member, err := group.AddMember()
+	if err != nil {
+		fmt.Println("failed to add member: ", err)
+	}
+	createdGroup.Members = append(createdGroup.Members, member)
+
 	fmt.Println(createdGroup)
-	// keepMemberAdd := true
-
-	// // for keepMemberAdd {
-
-	// }
-
 }

@@ -8,9 +8,10 @@ import (
 )
 
 type Group struct {
-	name         string
-	members      []member.Member //after retype to User type.
-	creationDate string
+	Name         string
+	Members      []member.Member //after retype to User type.
+	MembersCount int
+	CreationDate string
 }
 
 func CreateGroup(groupName string) (Group, error) {
@@ -30,9 +31,10 @@ func CreateGroup(groupName string) (Group, error) {
 	createdDate := currentTime.Format("2006/01/02")
 
 	return Group{
-		name:         groupName,
-		members:      groupMembers,
-		creationDate: createdDate,
+		Name:         groupName,
+		Members:      groupMembers,
+		MembersCount: len(groupMembers) + 1,
+		CreationDate: createdDate,
 	}, nil
 
 }
