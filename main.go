@@ -7,10 +7,10 @@ import (
 )
 
 func main() {
-	fmt.Println("a simple expenses manager between groups.")
-	grp1, err := group.CreateGroup("Fatali")
+	grp1, err := group.CreateGroup("tallinn 2024 holiday")
 	if err != nil {
 		fmt.Println("failed to give name to group: ", err)
+		return
 	}
 	fmt.Println(grp1)
 }
