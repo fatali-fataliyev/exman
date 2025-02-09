@@ -36,5 +36,5 @@ func CreateGroup(groupName string) (Group, error) {
 }
 
 func addMember() {
-	//test
+
 }
