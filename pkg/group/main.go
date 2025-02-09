@@ -3,11 +3,13 @@ package group
 import (
 	"fmt"
 	"time"
+
+	"github.com/fatali-fataliyev/exman/pkg/member"
 )
 
 type Group struct {
 	name         string
-	members      int //after retype to User type.
+	members      []member.Member //after retype to User type.
 	creationDate string
 }
 
@@ -22,19 +24,38 @@ func CreateGroup(groupName string) (Group, error) {
 		return Group{}, fmt.Errorf("group name is long, maximum allowed group name length is 30 characters")
 	}
 
-	// members := make(map[string]any)
+	groupMembers := []member.Member{}
 
 	currentTime := time.Now()
 	createdDate := currentTime.Format("2006/01/02")
 
 	return Group{
 		name:         groupName,
-		members:      0,
+		members:      groupMembers,
 		creationDate: createdDate,
 	}, nil
 
 }
 
-func addMember() {
-	// mem, err := member.CreateMember(ID)
+func AddMember() (member.Member, error) {
+	var name, surname, paidCategory string
+	var ID = 1
+	var amount float64
+
+	fmt.Print("Enter member name: " + "\n")
+	fmt.Scan(&name)
+	fmt.Print("Enter member surname: " + "\n")
+	fmt.Scan(&surname)
+	fmt.Print("Enter member paid category: " + "\n")
+	fmt.Scan(&paidCategory)
+	fmt.Print("Enter member paid amount: ")
+	fmt.Scan(&amount)
+
+	newMember, err := member.CreateMember(ID, name, surname, paidCategory, amount)
+
+	if err != nil {
+		return member.Member{}, fmt.Errorf("failed to create member: %w", err)
+	}
+
+	return newMember, nil
 }

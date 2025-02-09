@@ -14,10 +14,16 @@ func main() {
 	fmt.Print("Enter group name: ")
 	fmt.Scanln(&groupName)
 
-	grp1, err := group.CreateGroup(groupName)
+	createdGroup, err := group.CreateGroup(groupName)
 	if err != nil {
 		fmt.Println("failed to give name to group: ", err)
 		return
 	}
-	fmt.Println(grp1)
+	fmt.Println(createdGroup)
+	// keepMemberAdd := true
+
+	// // for keepMemberAdd {
+
+	// }
+
 }
