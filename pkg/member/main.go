@@ -10,7 +10,7 @@ type Member struct {
 	amount       float64
 }
 
-func createMember(ID int, name string, surname string, piadCategory string, amount float64) (Member, error) {
+func CreateMember(ID int, name string, surname string, piadCategory string, amount float64) (Member, error) {
 
 	if ID < 0 {
 		return Member{}, fmt.Errorf("ID numbers should be positive")
