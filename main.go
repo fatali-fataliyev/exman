@@ -7,7 +7,14 @@ import (
 )
 
 func main() {
-	grp1, err := group.CreateGroup("tallinn 2024 holiday")
+
+	fmt.Println("Welcome to ExMan")
+	fmt.Println("====")
+	var groupName string
+	fmt.Print("Enter group name: ")
+	fmt.Scanln(&groupName)
+
+	grp1, err := group.CreateGroup(groupName)
 	if err != nil {
 		fmt.Println("failed to give name to group: ", err)
 		return
