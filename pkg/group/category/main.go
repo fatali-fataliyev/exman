@@ -8,7 +8,7 @@ type Category struct {
 	paidMemberID int
 }
 
-func createCategory(name string, amount float64, paidMemberID int) (Category, error) {
+func CreateCategory(name string, amount float64, paidMemberID int) (Category, error) {
 	if len(name) > 30 {
 		return Category{}, fmt.Errorf("Max allowed category name length is 30 characters.")
 	}
