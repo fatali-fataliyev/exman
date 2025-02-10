@@ -4,7 +4,9 @@ import (
 	"fmt"
 	"time"
 
+	Category "github.com/fatali-fataliyev/exman/pkg/category"
 	"github.com/fatali-fataliyev/exman/pkg/member"
+	"golang.org/x/exp/rand"
 )
 
 type Group struct {
@@ -37,8 +39,9 @@ func CreateGroup(groupName string) (Group, error) {
 }
 
 func AddMember() (member.Member, error) {
-	var name, surname, paidCategory, currency string
-	var ID = 1
+	var name, surname, currency string
+	var paidCategory Category.Category
+	var ID = rand.Intn(1000) + 1
 	var amount float64
 
 	fmt.Print("Enter member name: " + "\n")
