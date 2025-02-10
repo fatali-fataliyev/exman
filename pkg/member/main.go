@@ -8,9 +8,10 @@ type Member struct {
 	surname      string
 	paidCategory string
 	amount       float64
+	currency     string
 }
 
-func CreateMember(ID int, name string, surname string, piadCategory string, amount float64) (Member, error) {
+func CreateMember(ID int, name string, surname string, piadCategory string, amount float64, currency string) (Member, error) {
 
 	if ID < 0 {
 		return Member{}, fmt.Errorf("ID numbers should be positive")
@@ -28,6 +29,7 @@ func CreateMember(ID int, name string, surname string, piadCategory string, amou
 		surname,
 		piadCategory,
 		amount,
+		currency,
 	}, nil
 
 }
