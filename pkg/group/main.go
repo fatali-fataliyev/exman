@@ -9,15 +9,12 @@ import (
 
 type Group struct {
 	Name         string
-	Members      []member.Member //after retype to User type.
+	Members      []member.Member
 	MembersCount int
 	CreationDate string
 }
 
 func CreateGroup(groupName string) (Group, error) {
-	//add user functionality.
-	//add current time to group.
-
 	if groupName == "" {
 		return Group{}, fmt.Errorf("group name is empty")
 	}
@@ -60,4 +57,8 @@ func AddMember() (member.Member, error) {
 	}
 
 	return newMember, nil
+}
+
+func getLendPersons() {
+
 }

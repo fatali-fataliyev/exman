@@ -20,11 +20,18 @@ func main() {
 		return
 	}
 
-	member, err := group.AddMember()
-	if err != nil {
-		fmt.Println("failed to add member: ", err)
+	var membersCount int
+
+	fmt.Printf("Approximately how many people will be in the group?: ")
+	fmt.Scan(&membersCount)
+
+	for i := 0; i < membersCount; i++ {
+		member, err := group.AddMember()
+		if err != nil {
+			fmt.Println("failed to add member: ", err)
+		}
+		createdGroup.Members = append(createdGroup.Members, member)
 	}
-	createdGroup.Members = append(createdGroup.Members, member)
 
 	fmt.Println(createdGroup)
 }
