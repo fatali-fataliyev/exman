@@ -1,18 +1,21 @@
 package member
 
-import "fmt"
+import (
+	"fmt"
+
+	Category "github.com/fatali-fataliyev/exman/pkg/category"
+)
 
 type Member struct {
 	ID           int
 	name         string
 	surname      string
-	paidCategory string
+	paidCategory Category.Category
 	amount       float64
 	currency     string
 }
 
-func CreateMember(ID int, name string, surname string, piadCategory string, amount float64, currency string) (Member, error) {
-
+func CreateMember(ID int, name string, surname string, piadCategory Category.Category, amount float64, currency string) (Member, error) {
 	if ID < 0 {
 		return Member{}, fmt.Errorf("ID numbers should be positive")
 	}
