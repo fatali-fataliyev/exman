@@ -1,2 +1,5 @@
 # exman
-A simple expenses manager between groups in GO
+
+---
+
+ExMan is a simple expenses calculator between group members.
