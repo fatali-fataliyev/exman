@@ -37,7 +37,7 @@ func CreateGroup(groupName string) (Group, error) {
 }
 
 func AddMember() (member.Member, error) {
-	var name, surname, paidCategory string
+	var name, surname, paidCategory, currency string
 	var ID = 1
 	var amount float64
 
@@ -49,8 +49,10 @@ func AddMember() (member.Member, error) {
 	fmt.Scan(&paidCategory)
 	fmt.Print("Enter member paid amount: ")
 	fmt.Scan(&amount)
+	fmt.Print("Enter member paid amount currency(usd, eur, azn, rub...): ")
+	fmt.Scan(&currency)
 
-	newMember, err := member.CreateMember(ID, name, surname, paidCategory, amount)
+	newMember, err := member.CreateMember(ID, name, surname, paidCategory, amount, currency)
 
 	if err != nil {
 		return member.Member{}, fmt.Errorf("failed to create member: %w", err)
